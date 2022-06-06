@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 23:16:32 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 20:24:47 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:12:09 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,9 @@ int	play_input(int keycode, t_game *game)
 		select_side(game, &pos, 1);
 	else if (keycode == 0x0044 || keycode == 0x0064 || keycode == 0x02)
 		select_side(game, &pos, 3);
-	else if (keycode == 0x0057 || keycode == 0x0077 || keycode == 0x01)
+	else if (keycode == 0x0057 || keycode == 0x0077 || keycode == 0x0D)
 		select_side(game, &pos, 2);
-	else if (keycode == 0x0053 || keycode == 0x0073 || keycode == 0x0D)
+	else if (keycode == 0x0053 || keycode == 0x0073 || keycode == 0x01)
 		select_side(game, &pos, 0);
 	else
 		return (0);
