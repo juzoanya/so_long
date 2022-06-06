@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 21:04:56 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:06:21 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # elif __APPLE__
 #include "../mlx/mlx.h"
 # endif
-# include "get_next_line.h"
+# include "../gnl/get_next_line.h"
 # include "../printf/ft_printf.h"
 
 typedef struct s_pos
