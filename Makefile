@@ -6,7 +6,7 @@
 #    By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 20:11:18 by juzoanya          #+#    #+#              #
-#    Updated: 2022/06/06 21:05:08 by juzoanya         ###   ########.fr        #
+#    Updated: 2022/06/06 21:08:42 by juzoanya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,7 @@ ifeq ($(UNAME),Linux)
 else
 	@make -C $(PATH_MLX)
 	@make -C $(PATH_PRF)
-	$(CC) $(OBJS) $(PRF) -Lmlx -l $(MLX) -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJS) $(PRF) $(MLX) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(NAME) created"
 endif
 
