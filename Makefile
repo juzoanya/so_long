@@ -22,7 +22,7 @@ PATH_INC = ./includes/
 PATH_GNL = ./gnl/
 PATH_PRF = ./printf/
 PATH_OBJS = ./objs/
-INC = -I ./includes -I ./mlx -I ./printf
+INC = -I ./includes -I ./printf
 
 MLX = $(PATH_MLX)libmlx.a
 PRF = $(PATH_PRF)libftprintf.a
@@ -58,9 +58,9 @@ ifeq ($(UNAME),Linux)
 	$(CC) $(OBJS) $(PRF) $(MLX) -o $(NAME) $(CFLAGS) $(MLXFLAGS)
 	@echo "$(NAME) created"
 else
-	@make -C $(PATH_MLX)
+#	@make -C $(PATH_MLX)
 	@make -C $(PATH_PRF)
-	$(CC) $(OBJS) $(PRF) $(MLX) -I /usr/X11/include -g -L /usr/X11/lib -l mlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJS) $(PRF) -I /usr/X11/include -g -L /usr/X11/lib -l mlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(NAME) created"
 endif
 
