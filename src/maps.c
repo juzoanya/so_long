@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:43:40 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/03 11:46:30 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:21:51 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,10 +67,10 @@ void	close_game(t_game *game)
 {
 	destroy_map(game);
 	mlx_clear_window(game->mlx, game->win);
-	mlx_loop_end(game->mlx);
+	//mlx_loop_end(game->mlx);
 	destroy_image(game);
 	mlx_destroy_window(game->mlx, game->win);
-	mlx_destroy_display(game->mlx);
+	//mlx_destroy_display(game->mlx);
 	free(game->mlx);
 	exit(0);
 }

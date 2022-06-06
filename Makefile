@@ -6,7 +6,7 @@
 #    By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 20:11:18 by juzoanya          #+#    #+#              #
-#    Updated: 2022/06/04 13:23:40 by juzoanya         ###   ########.fr        #
+#    Updated: 2022/06/06 19:31:42 by juzoanya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,18 @@ CC = gcc
 CFLAGS = -Wall -Wextra -Werror -ggdb3 $(INC)
 
 PATH_SRC = ./src/
-PATH_MLX = ./mlx/
 PATH_INC = ./includes/
 PATH_GNL = ./gnl/
 PATH_PRF = ./printf/
 PATH_OBJS = ./objs/
+<<<<<<< HEAD
+=======
+ifeq ($(UNAME),Linux)
+	PATH_MLX = ./mlx/mlx_linux/
+else
+	PATH_MLX = ./mlx/mlx_macos/
+endif
+>>>>>>> 51b43d4 (two mlx libraries)
 INC = -I ./includes -I ./printf
 
 MLX = $(PATH_MLX)libmlx.a
