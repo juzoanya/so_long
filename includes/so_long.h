@@ -6,18 +6,18 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 19:56:40 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:20:38 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#ifdef __linux__
-	# include "../mlx/mlx_linux/mlx.h"
-#elif __APPLE__
-	# include "..mlx/mlx_macos/mlx.h"
-#endif
+# ifdef __linux__
+#include "../mlx/mlx_linux/mlx.h"
+# elif __APPLE__
+#include "../mlx/mlx_macos/mlx.h"
+# endif
 # include "get_next_line.h"
 # include "../printf/ft_printf.h"
 

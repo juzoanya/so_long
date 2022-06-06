@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 23:16:32 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/02 23:18:10 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:24:47 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ int	play_input(int keycode, t_game *game)
 
 	pos.x = game->ply.pos_x;
 	pos.y = game->ply.pos_y;
-	if (keycode == 0xff1b)
+	if (keycode == 0xff1b || keycode == 0x35)
 		close_game(game);
-	else if (keycode == 0x0041 || keycode == 0x0061)
+	else if (keycode == 0x0041 || keycode == 0x0061 || keycode == 0x00)
 		select_side(game, &pos, 1);
-	else if (keycode == 0x0044 || keycode == 0x0064)
+	else if (keycode == 0x0044 || keycode == 0x0064 || keycode == 0x02)
 		select_side(game, &pos, 3);
-	else if (keycode == 0x0057 || keycode == 0x0077)
+	else if (keycode == 0x0057 || keycode == 0x0077 || keycode == 0x01)
 		select_side(game, &pos, 2);
-	else if (keycode == 0x0053 || keycode == 0x0073)
+	else if (keycode == 0x0053 || keycode == 0x0073 || keycode == 0x0D)
 		select_side(game, &pos, 0);
 	else
 		return (0);
