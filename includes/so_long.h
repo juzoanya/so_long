@@ -13,12 +13,8 @@
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-#ifdef __linux__
 # include "../mlx/mlx.h"
 # include "../mlx/mlx_int.h"
-#elif __APPLE__
-# include <mlx.h>
-#endif
 # include "get_next_line.h"
 # include "../printf/ft_printf.h"
 
