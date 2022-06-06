@@ -33,7 +33,7 @@ void	asset_init(t_game *game)
 	game->player[1].img = image_file(mlx, "./imgs/playerA.xpm", &img.x, &img.y);
 	game->player[2].img = image_file(mlx, "./imgs/playerW.xpm", &img.x, &img.y);
 	game->player[3].img = image_file(mlx, "./imgs/playerD.xpm", &img.x, &img.y);
-	game->player[4].img = image_file(mlx, "./imgs/playerd.xpm", &img.x, &img.y);
+	game->player[4].img = image_file(mlx, "./imgs/player-d.xpm", &img.x, &img.y);
 	game->snag[0].img = image_file(mlx, "./imgs/snag_0.xpm", &img.x, &img.y);
 	game->snag[1].img = image_file(mlx, "./imgs/snag_1.xpm", &img.x, &img.y);
 	game->snag[2].img = image_file(mlx, "./imgs/snag_2.xpm", &img.x, &img.y);
