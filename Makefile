@@ -6,7 +6,7 @@
 #    By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 20:11:18 by juzoanya          #+#    #+#              #
-#    Updated: 2022/06/06 20:26:13 by juzoanya         ###   ########.fr        #
+#    Updated: 2022/06/06 21:05:08 by juzoanya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ PATH_OBJS = ./objs/
 ifeq ($(UNAME),Linux)
 	PATH_MLX = ./mlx/mlx_linux/
 else
-	PATH_MLX = ./mlx/mlx_macos/
+	PATH_MLX = ./mlx/
 endif
 INC = -I ./includes -I ./printf
 

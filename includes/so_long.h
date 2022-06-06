@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 20:20:38 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/06 21:04:56 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # ifdef __linux__
 #include "../mlx/mlx_linux/mlx.h"
 # elif __APPLE__
-#include "../mlx/mlx_macos/mlx.h"
+#include "../mlx/mlx.h"
 # endif
 # include "get_next_line.h"
 # include "../printf/ft_printf.h"
