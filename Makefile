@@ -14,7 +14,7 @@ UNAME := $(shell uname -s)
 
 NAME = so_long
 CC = gcc
-CFLAGS = -Wall -Wextra -Werror -ggdb3 -g $(INC)
+CFLAGS = -Wall -Wextra -Werror -ggdb3 $(INC)
 
 PATH_SRC = ./src/
 PATH_MLX = ./mlx/
@@ -58,9 +58,9 @@ ifeq ($(UNAME),Linux)
 	$(CC) $(OBJS) $(PRF) $(MLX) -o $(NAME) $(CFLAGS) $(MLXFLAGS)
 	@echo "$(NAME) created"
 else
-#	@make -C $(PATH_MLX)
+	@make -C $(PATH_MLX)
 	@make -C $(PATH_PRF)
-	$(CC) $(OBJS) $(PRF) -I /usr/X11/include -g -L /usr/X11/lib -l mlx -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(OBJS) $(PRF) $(MLX) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
 	@echo "$(NAME) created"
 endif
 
