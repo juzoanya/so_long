@@ -6,7 +6,7 @@
 #    By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 20:11:18 by juzoanya          #+#    #+#              #
-#    Updated: 2022/06/06 21:08:42 by juzoanya         ###   ########.fr        #
+#    Updated: 2022/06/06 22:59:16 by juzoanya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,14 @@ PATH_INC = ./includes/
 PATH_GNL = ./gnl/
 PATH_PRF = ./printf/
 PATH_OBJS = ./objs/
+INC = -I ./includes -I ./printf
 ifeq ($(UNAME),Linux)
 	PATH_MLX = ./mlx/mlx_linux/
+#	INC = -I ./includes/inc -I ./printf
 else
 	PATH_MLX = ./mlx/
+#	INC = -I ./includes -I ./printf
 endif
-INC = -I ./includes -I ./printf
 
 MLX = $(PATH_MLX)libmlx.a
 PRF = $(PATH_PRF)libftprintf.a
@@ -43,6 +45,11 @@ SRC = 	$(PATH_SRC)so_long.c \
 		$(PATH_SRC)destroy.c \
 		$(PATH_GNL)get_next_line.c \
 		$(PATH_GNL)get_next_line_utils.c \
+#ifeq ($(UNAME),Linux)
+#		$(PATH_SRC)close_l.c \
+else
+#		$(PATH_SRC)close_m.c \
+endif
 
 OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
 
@@ -95,7 +102,7 @@ memcheck:	clean all
 	clear
 	$(VAL) $(VAL_FLAGS) ./$(NAME) $(ARGS)
 
-norms:
+norm:
 	@norminette $(PATH_SRC) $(PATH_GNL) $(PATH_PRF) $(PATH_INC)
 
 .PHONY:	all clean fclean re
