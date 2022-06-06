@@ -95,7 +95,7 @@ static void	check_char_err(t_game *game, int p, int e)
 {
 	if (p != 1 || e != 1 || game->gems < 1)
 	{
-		printf("Check that there is 1 player, 1 exit & 1 coin!\n");
+		ft_printf("Check that there is 1 player, 1 exit & 1 coin!\n");
 		destroy_map(game);
 		free(game);
 		exit(0);

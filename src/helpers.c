@@ -18,8 +18,8 @@ int	check_ext(char *str, char *ext)
 	int	len_ext;
 	int	i;
 
-	len_str = strlen(str);
-	len_ext = strlen(ext);
+	len_str = ft_strlen(str);
+	len_ext = ft_strlen(ext);
 	i = 0;
 	while (len_ext > 0)
 	{
