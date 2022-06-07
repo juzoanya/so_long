@@ -6,7 +6,7 @@
 #    By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/13 20:11:18 by juzoanya          #+#    #+#              #
-#    Updated: 2022/06/06 22:59:16 by juzoanya         ###   ########.fr        #
+#    Updated: 2022/06/07 11:45:54 by juzoanya         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,10 +24,8 @@ PATH_OBJS = ./objs/
 INC = -I ./includes -I ./printf
 ifeq ($(UNAME),Linux)
 	PATH_MLX = ./mlx/mlx_linux/
-#	INC = -I ./includes/inc -I ./printf
 else
 	PATH_MLX = ./mlx/
-#	INC = -I ./includes -I ./printf
 endif
 
 MLX = $(PATH_MLX)libmlx.a
@@ -41,17 +39,31 @@ SRC = 	$(PATH_SRC)so_long.c \
 		$(PATH_SRC)errors.c \
 		$(PATH_SRC)utils.c \
 		$(PATH_SRC)input.c \
+		$(PATH_SRC)close_lin.c \
 		$(PATH_SRC)helpers.c \
 		$(PATH_SRC)destroy.c \
 		$(PATH_GNL)get_next_line.c \
 		$(PATH_GNL)get_next_line_utils.c \
-#ifeq ($(UNAME),Linux)
-#		$(PATH_SRC)close_l.c \
-else
-#		$(PATH_SRC)close_m.c \
-endif
 
-OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
+SRCM = 	$(PATH_SRC)so_long.c \
+		$(PATH_SRC)checks.c \
+		$(PATH_SRC)game.c \
+		$(PATH_SRC)move.c \
+		$(PATH_SRC)maps.c \
+		$(PATH_SRC)errors.c \
+		$(PATH_SRC)utils.c \
+		$(PATH_SRC)input.c \
+		$(PATH_SRC)close_mac.c \
+		$(PATH_SRC)helpers.c \
+		$(PATH_SRC)destroy.c \
+		$(PATH_GNL)get_next_line.c \
+		$(PATH_GNL)get_next_line_utils.c \
+
+ifeq ($(UNAME),Linux)
+	OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRC))
+else
+	OBJS = $(patsubst $(PATH_SRC)%.c, $(PATH_OBJS)%.o, $(SRCM))
+endif
 
 MLXFLAGS = -I $(PATH_MLX) -L $(PATH_MLX) -lmlx -Ilmlx -lXext -lX11
 

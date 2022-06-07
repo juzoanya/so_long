@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 13:43:40 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 22:58:24 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:43:44 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,17 @@ void	map_init(t_game *game, char **argv)
 	set_player_pos(game);
 }
 
-void	close_game(t_game *game)
-{
-	destroy_map(game);
-	mlx_clear_window(game->mlx, game->win);
-	if (OS_LINUX)
-		mlx_loop_end(game->mlx);
-	destroy_image(game);
-	mlx_destroy_window(game->mlx, game->win);
-	if (OS_LINUX)
-		mlx_destroy_display(game->mlx);
-	free(game->mlx);
-	exit(0);
-}
+// void	close_game(t_game *game)
+// {
+// 	destroy_map(game);
+// 	destroy_image(game);
+// 	mlx_clear_window(game->mlx, game->win);
+// 	//if (OS_LINUX)
+// 	//	mlx_loop_end(game->mlx);
+// 	//game->loop.end = 1;
+// 	mlx_destroy_window(game->mlx, game->win);
+// 	//if (OS_LINUX)
+// 	//	mlx_destroy_display(game->mlx);
+// 	//free(game->mlx);
+// 	exit(0);
+// }
