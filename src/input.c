@@ -54,7 +54,7 @@ int	play_input(int keycode, t_game *game)
 		select_side(game, &pos, 0);
 	else
 		return (0);
-	if (!game->end && !game->ply.die)
+	if (!(game->end) && !(game->ply.die))
 		move_player(game, &pos);
 	return (0);
 }

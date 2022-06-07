@@ -41,10 +41,10 @@ void	print_moves(t_game *game)
 	free(moves);
 	mlx_string_put(game->mlx, game->win, 25, 25, 0xFFFFFF, str);
 	free(str);
-	if (game->ply.die)
+	if (game->ply.die == 1)
 		mlx_string_put(game->mlx, game->win, 120, 25, 0xFFFFFF,
 			"YOU LOSE! Press 'Esc' to Exit!");
-	if (game->end)
+	if (game->end == 1)
 		mlx_string_put(game->mlx, game->win, 120, 25, 0xFFFFFF,
 			"YOU WIN! Press 'Esc' to Exit!");
 }
