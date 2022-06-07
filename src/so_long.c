@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:27:13 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 09:57:20 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:55:09 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,8 @@ void	game_init(t_game *game)
 	game->moves = 0;
 	game->exit_state = 0;
 	game->end = 0;
-	//game->loop.end =0;
 	game->ply.side = 0;
 	game->ply.die = 0;
-	//if (!game->loop.end)
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx, image.x * game->map.col,
 			image.y * game->map.row, "so_long");
@@ -67,7 +65,6 @@ void	game_init(t_game *game)
 	mlx_hook(game->win, 2, 1L << 0, play_input, (void *)game);
 	print_moves(game);
 	mlx_loop_hook(game->mlx, game_play, game);
-	//if (!game->loop.end)
 	mlx_loop(game->mlx);
 }
 

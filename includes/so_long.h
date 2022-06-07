@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/06 23:40:29 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 11:54:29 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,6 @@
 
 # include "../gnl/get_next_line.h"
 # include "../printf/ft_printf.h"
-
-typedef struct s_loop
-{
-	int	end;
-}				t_loop;
 
 typedef struct s_pos
 {
@@ -70,7 +65,6 @@ typedef struct s_game
 	t_image		snag[5];
 	t_image		exit[2];
 	t_player	ply;
-	t_loop		loop;
 	int			exit_state;
 	int			moves;
 	int			gems;
