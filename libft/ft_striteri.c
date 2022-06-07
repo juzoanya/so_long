@@ -1,22 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_mac.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: juzoanya <juzoanya@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 11:42:35 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 19:57:17 by juzoanya         ###   ########.fr       */
+/*   Created: 2021/11/26 19:26:43 by juzoanya          #+#    #+#             */
+/*   Updated: 2021/12/16 09:17:12 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	close_game(t_game *game)
+void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	destroy_map(game);
-	destroy_image(game);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
+	unsigned int	i;
+
+	if (*s != '\0' && f)
+	{
+		i = 0;
+		while (*s)
+		{
+			f(i, s);
+			i++;
+			s++;
+		}
+	}
 }

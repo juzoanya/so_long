@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 20:27:13 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 11:55:09 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:12:49 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,8 +72,11 @@ int	main(int argc, char *argv[])
 {
 	t_game	game;
 
-	if (argc < 1)
-		write(1, "Pass an argument to the program.", 32);
+	if (argc < 2)
+	{
+		ft_putendl_fd("Pass the location to Game map!", 1);
+		exit(0);
+	}
 	if (!(check_ext(argv[1], ".ber")))
 		err_extension();
 	valid_map(argv);

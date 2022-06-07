@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_mac.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: juzoanya <juzoanya@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 11:42:35 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 19:57:17 by juzoanya         ###   ########.fr       */
+/*   Created: 2021/12/07 17:13:44 by juzoanya          #+#    #+#             */
+/*   Updated: 2021/12/20 19:34:58 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	close_game(t_game *game)
+t_list	*ft_lstnew(void *content)
 {
-	destroy_map(game);
-	destroy_image(game);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
+	t_list	*link;
+
+	link = (t_list *)malloc(sizeof(*link));
+	if (link == NULL)
+		return (NULL);
+	link->content = content;
+	link->next = NULL;
+	return (link);
 }

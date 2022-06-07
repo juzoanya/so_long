@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_mac.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: juzoanya <juzoanya@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 11:42:35 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 19:57:17 by juzoanya         ###   ########.fr       */
+/*   Created: 2021/11/22 11:29:19 by juzoanya          #+#    #+#             */
+/*   Updated: 2021/12/12 20:05:46 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	close_game(t_game *game)
+void	ft_putchar_fd(char c, int fd)
 {
-	destroy_map(game);
-	destroy_image(game);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
+	write(fd, &c, 1);
 }
+/*int main(void)
+{
+	char    c;
+	c = 'P';
+	ft_putchar_fd(c, 1);
+	return (0);
+}
+*/

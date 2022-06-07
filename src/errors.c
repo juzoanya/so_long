@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:36:19 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/03 11:49:28 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:14:43 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 void	err_file_open(void)
 {
-	ft_printf("File Open Error\n");
+	ft_putendl_fd("File Open Error!", 1);
 	exit(0);
 }
 
 void	err_file_close(void)
 {
-	ft_printf("File Close Error\n");
+	ft_putendl_fd("File Close Error!", 1);
 	exit(0);
 }
 
 void	err_extension(void)
 {
-	ft_printf("Extension Error!\n");
+	ft_putendl_fd("Extension Error!", 1);
 	exit(0);
 }
 
 void	err_map_char(void)
 {
-	ft_printf("Invalid Map Character\n");
+	ft_putendl_fd("Invalid Map Character!", 1);
 	exit(0);
 }
 
 void	err_map_shape(void)
 {
-	ft_printf("Missaligned: Map not a Rectangle!\n");
+	ft_putendl_fd("Missaligned: Map not a Rectangle!", 1);
 	exit(0);
 }

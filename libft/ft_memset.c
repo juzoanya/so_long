@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_mac.c                                        :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: juzoanya <juzoanya@student.42wolfsburg.de> +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/07 11:42:35 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 19:57:17 by juzoanya         ###   ########.fr       */
+/*   Created: 2021/11/24 21:44:59 by juzoanya          #+#    #+#             */
+/*   Updated: 2021/12/14 15:33:56 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-void	close_game(t_game *game)
+void	*ft_memset(void *s, int c, size_t n)
 {
-	destroy_map(game);
-	destroy_image(game);
-	mlx_clear_window(game->mlx, game->win);
-	mlx_destroy_window(game->mlx, game->win);
-	exit(0);
+	unsigned char	*mem;
+
+	mem = s;
+	while (n > 0)
+	{
+		*mem = c;
+		mem++;
+		n--;
+	}
+	return (s);
 }

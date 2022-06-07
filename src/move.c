@@ -6,11 +6,18 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 20:14:49 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/03 11:33:46 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:23:48 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
+
+static void	print_moves_cli(t_game *game)
+{
+	ft_putstr_fd("moves = ", 1);
+	ft_putnbr_fd(game->moves, 1);
+	write(1, "\n", 1);
+}
 
 static void	last_tile_move(t_game *game, t_pos *pos, int x, int y)
 {
@@ -18,7 +25,7 @@ static void	last_tile_move(t_game *game, t_pos *pos, int x, int y)
 	{
 		game->map.map[x][y] = '0';
 		game->moves++;
-		ft_printf("moves = %d\n", game->moves);
+		print_moves_cli(game);
 	}
 }
 
@@ -50,7 +57,7 @@ void	move_player(t_game *game, t_pos *pos)
 			game->moves++;
 			game->ply.pos_x = pos->x;
 			game->ply.pos_y = pos->y;
-			ft_printf("moves = %d\n", game->moves);
+			print_moves_cli(game);
 		}
 		last_tile_move(game, pos, x, y);
 	}

@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 11:54:29 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/07 20:05:21 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # endif
 
 # include "../gnl/get_next_line.h"
-# include "../printf/ft_printf.h"
+# include "../libft/libft.h"
 
 typedef struct s_pos
 {
