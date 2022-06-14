@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 14:36:19 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 20:14:43 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:27:36 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,18 @@ void	err_extension(void)
 	exit(0);
 }
 
-void	err_map_char(void)
+void	err_map_char(int n)
 {
-	ft_putendl_fd("Invalid Map Character!", 1);
-	exit(0);
+	if (n == 0)
+	{
+		ft_putendl_fd("Invalid Map Character!", 1);
+		exit(0);
+	}
+	else if (n == 1)
+	{
+		ft_putendl_fd("Invalid Game Border Configuration!", 1);
+		exit(0);
+	}
 }
 
 void	err_map_shape(void)

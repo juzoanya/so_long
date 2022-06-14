@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 13:28:37 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 20:05:21 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:27:54 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
 #  include "../mlx/mlx.h"
 # endif
 
+# include <unistd.h>
 # include "../gnl/get_next_line.h"
 # include "../libft/libft.h"
 
@@ -74,7 +75,7 @@ typedef struct s_game
 //error check functions
 int		check_ext(char *str, char *ext);
 void	valid_map(char *argv[]);
-void	check_map_shape(t_game *game);
+void	check_map_shape(t_game *game, char *argv[]);
 void	check_map_char(t_game *game);
 
 //map fucntions
@@ -97,7 +98,7 @@ void	destroy_map(t_game *game);
 void	err_file_open(void);
 void	err_file_close(void);
 void	err_extension(void);
-void	err_map_char(void);
+void	err_map_char(int n);
 void	err_map_shape(void);
 
 //helpers

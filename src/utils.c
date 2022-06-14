@@ -6,7 +6,7 @@
 /*   By: juzoanya <juzoanya@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:54:29 by juzoanya          #+#    #+#             */
-/*   Updated: 2022/06/07 20:17:04 by juzoanya         ###   ########.fr       */
+/*   Updated: 2022/06/14 09:21:57 by juzoanya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,11 +93,10 @@ void	set_player_pos(t_game *game)
 
 static void	check_char_err(t_game *game, int p, int e)
 {
-	if (p != 1 || e != 1 || game->gems < 1)
+	if (p < 1 || e < 1 || game->gems < 1)
 	{
-		ft_putendl_fd("Check that there is 1 player, 1 exit & 1 coin!", 1);
+		ft_putendl_fd("Game must have at least 1 Player, 1 Exit & 1 Coin!", 1);
 		destroy_map(game);
-		free(game);
 		exit(0);
 	}
 }
